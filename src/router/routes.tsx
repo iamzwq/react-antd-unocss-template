@@ -1,6 +1,5 @@
 import { lazy } from "react";
 import { Navigate, NonIndexRouteObject, RouteObject, redirect } from "react-router-dom";
-import { Icon } from "@iconify/react";
 import { useGlobalStore } from "~/stores";
 import lazyLoad from "./lazyLoad";
 import BasicLayout from "~/layout";
@@ -23,19 +22,19 @@ export const menuRoutes: CustomRouteObject[] = [
   {
     path: "/home",
     title: "首页",
-    icon: <Icon icon="ant-design:home-outlined" />,
+    icon: <div className="i-ant-design-home-outlined" />,
     element: lazyLoad(lazy(() => import("~/pages/Home"))),
   },
   {
     path: "/hotNews",
     title: "聚合热榜",
-    icon: <Icon icon="ant-design:bars-outlined" />,
+    icon: <div className="i-ant-design-bars-outlined" />,
     element: lazyLoad(lazy(() => import("~/pages/HotNews"))),
   },
   {
     path: "/system",
     title: "系统管理",
-    icon: <Icon icon="ant-design:setting-outlined" />,
+    icon: <div className="i-ant-design-setting-outlined" />,
     children: [
       {
         path: "/system/user",

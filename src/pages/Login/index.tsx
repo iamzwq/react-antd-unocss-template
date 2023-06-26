@@ -1,4 +1,3 @@
-import { Icon } from "@iconify/react";
 import { Button, Checkbox, Form, Input } from "antd";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useGlobalStore } from "~/stores";
@@ -35,14 +34,14 @@ const Login = () => {
           name="username"
           rules={[{ required: true, message: "Please input your Username!" }]}
         >
-          <Input prefix={<Icon icon="ant-design:user-outlined" />} placeholder="Username" />
+          <Input prefix={<div className="i-ant-design-user-outlined" />} placeholder="Username" />
         </Form.Item>
         <Form.Item
           name="password"
           rules={[{ required: true, message: "Please input your Password!" }]}
         >
           <Input
-            prefix={<Icon icon="ant-design:lock-outlined" />}
+            prefix={<div className="i-ant-design-lock-outlined" />}
             type="password"
             placeholder="Password"
           />

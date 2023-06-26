@@ -1,6 +1,5 @@
 import { Avatar, Badge, Button, Dropdown, Input, MenuProps, Space } from "antd";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Icon } from "@iconify/react";
 import { useDebounceFn } from "ahooks";
 import { useGlobalStore } from "~/stores";
 
@@ -47,14 +46,14 @@ const HeaderRight = () => {
         <Button
           type="text"
           shape="circle"
-          icon={<Icon icon="ant-design:bell-outlined" inline={true} fontSize={20} />}
+          icon={<div className="i-ant-design-bell-outlined text-xl" />}
         />
       </Badge>
       <div className="relative">
         <Button
           type="primary"
           shape="circle"
-          icon={<Icon icon="ant-design:skin-outlined" inline={true} fontSize={20} />}
+          icon={<div className="i-ant-design-skin-outlined text-xl" />}
         />
         <Input
           type="color"
@@ -87,9 +86,9 @@ const Header = () => {
         type="text"
         icon={
           collapsed ? (
-            <Icon icon="ant-design:menu-unfold-outlined" fontSize="24" />
+            <div className="i-ant-design-menu-unfold-outlined text-2xl" />
           ) : (
-            <Icon icon="ant-design:menu-fold-outlined" fontSize="24" />
+            <div className="i-ant-design-menu-fold-outlined text-2xl" />
           )
         }
         onClick={() => {
