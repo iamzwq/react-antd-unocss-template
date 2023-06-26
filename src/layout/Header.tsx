@@ -77,7 +77,7 @@ const Header = () => {
   const setCollapsed = useGlobalStore(state => state.setCollapsed);
 
   return (
-    <div className="h-16 bg-white flex items-center">
+    <div className="h-16 bg-white flex items-center border-b-solid border-b border-b-slate-900/10 fixed z-10 top-0 left-0 right-0">
       <div
         className="m-4 h-32px w-[168px] bg-gray rounded"
         style={{ backgroundImage: `url(https://picsum.photos/168/32)` }}

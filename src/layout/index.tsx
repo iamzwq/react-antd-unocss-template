@@ -1,17 +1,24 @@
 import { Layout } from "antd";
 import { Outlet } from "react-router-dom";
+import { useGlobalStore } from "~/stores";
 import Header from "./Header";
 import Slider from "./Sider";
 
 const { Content } = Layout;
 
 const BasicLayout = () => {
+  const collapsed = useGlobalStore(state => state.collapsed);
+
   return (
     <Layout>
       <Header />
-      <Layout>
+      <Layout className="mt-16">
         <Slider />
-        <Content className="flex-1 overflow-hidden p-6 bg-white">
+        <Content
+          className={`flex-1 overflow-hidden p-6 bg-white ${
+            collapsed ? "ml-[80px]" : "ml-[200px]"
+          } transition-all duration-200 ease-[ease]`}
+        >
           <Outlet />
         </Content>
       </Layout>
