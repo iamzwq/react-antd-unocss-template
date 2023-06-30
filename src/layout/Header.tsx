@@ -62,10 +62,10 @@ const HeaderRight = () => {
           onChange={handleColorChange}
         />
       </div>
-      <Dropdown menu={{ items }} placement="bottomRight">
+      <Dropdown trigger={["click"]} menu={{ items }} placement="bottomRight">
         <Avatar
           src="https://p3-passport.byteimg.com/img/user-avatar/36aebd145b4f04612071b7fd57e7ad85~64x64.awebp"
-          className="cursor-pointer"
+          className="cursor-pointer hover:animate-spin"
         />
       </Dropdown>
     </Space>
@@ -77,13 +77,14 @@ const Header = () => {
   const setCollapsed = useGlobalStore(state => state.setCollapsed);
 
   return (
-    <div className="h-16 bg-white flex items-center border-b-solid border-b border-b-slate-900/10 fixed z-10 top-0 left-0 right-0">
+    <div className="h-16 bg-white flex items-center border-b-solid border-b border-b-slate-900/10 fixed z-10 top-0 inset-x-0">
       <div
-        className="m-4 h-32px w-[168px] bg-gray rounded"
+        className="hidden md:block m-4 h-32px w-[168px] bg-gray rounded"
         style={{ backgroundImage: `url(https://picsum.photos/168/32)` }}
       />
       <Button
         type="text"
+        className="hidden lg:block"
         icon={
           collapsed ? (
             <div className="i-ant-design-menu-unfold-outlined text-2xl" />
@@ -95,7 +96,7 @@ const Header = () => {
           setCollapsed(!collapsed);
         }}
       />
-      <div className="text-2xl font-600 ml-4">Admin Templete</div>
+      <div className="text-2xl font-600 ml-4">🦁 Admin Templete</div>
       <div className="ml-auto pr-4">
         <HeaderRight />
       </div>

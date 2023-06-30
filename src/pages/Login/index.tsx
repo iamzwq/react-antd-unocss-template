@@ -29,7 +29,7 @@ const Login = () => {
         initialValues={{ remember: true, username: "admin", password: "123456" }}
         onFinish={onFinish}
       >
-        <div className="text-2xl text-center font-bold mb-8">Welcome</div>
+        <div className="text-2xl text-center font-bold mb-8">🍪 Welcome</div>
         <Form.Item
           name="username"
           rules={[{ required: true, message: "Please input your Username!" }]}

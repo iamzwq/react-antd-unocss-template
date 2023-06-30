@@ -39,7 +39,13 @@ const Sider = () => {
   }, [matches]);
 
   return (
-    <AntdSider theme="light" trigger={null} collapsible collapsed={collapsed} className="!fixed z-10">
+    <AntdSider
+      theme="light"
+      trigger={null}
+      collapsible
+      collapsed={collapsed}
+      className="!fixed z-10 hidden lg:block"
+    >
       <Menu
         className="h-[calc(100vh-64px)] !border-e-0"
         mode="inline"

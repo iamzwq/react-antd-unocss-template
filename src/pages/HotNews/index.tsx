@@ -17,7 +17,7 @@ const NAVS = [
 const HotNews = () => {
   const [active, setActive] = useState(NAVS[0].id);
 
-  const { data, loading } = useRequest(() => hotNewsService.getHotNews(active), {
+  const { data, loading } = useRequest(() => hotNewsService.fetchHotNews(active), {
     refreshDeps: [active],
   });
 

@@ -11,7 +11,7 @@ export interface NewsItem {
 }
 
 const hotNewsService = {
-  getHotNews: (type: string) => {
+  fetchHotNews: (type: string) => {
     return request.get<{ list: NewsItem[] }>(`/new?type=${type}`, {
       successCode: 200,
     });

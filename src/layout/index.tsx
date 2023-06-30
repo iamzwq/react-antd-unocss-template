@@ -16,7 +16,7 @@ const BasicLayout = () => {
         <Slider />
         <Content
           className={`flex-1 overflow-hidden p-6 bg-white ${
-            collapsed ? "ml-[80px]" : "ml-[200px]"
+            collapsed ? "lg:ml-[80px]" : "lg:ml-[200px]"
           } transition-all duration-200 ease-[ease]`}
         >
           <Outlet />
