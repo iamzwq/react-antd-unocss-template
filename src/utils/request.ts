@@ -106,6 +106,6 @@ class Request {
 }
 
 export const request = new Request({
-  timeout: 20 * 1000,
+  timeout: 5 * 60 * 1000,
   baseURL: import.meta.env.VITE_API_BASEURL,
 });

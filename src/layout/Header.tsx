@@ -2,6 +2,9 @@ import { Avatar, Badge, Button, Dropdown, Input, MenuProps, Space } from "antd";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDebounceFn } from "ahooks";
 import { useGlobalStore } from "~/stores";
+import { useState } from "react";
+
+const randomImgUrl = "https://picsum.photos/168/32";
 
 const HeaderRight = () => {
   const navigate = useNavigate();
@@ -76,11 +79,16 @@ const Header = () => {
   const collapsed = useGlobalStore(state => state.collapsed);
   const setCollapsed = useGlobalStore(state => state.setCollapsed);
 
+  const [logoUrl, setLogoUrl] = useState(randomImgUrl);
+
   return (
     <div className="h-16 bg-white flex items-center border-b-solid border-b border-b-slate-900/10 fixed z-10 top-0 inset-x-0">
       <div
-        className="hidden md:block m-4 h-32px w-[168px] bg-gray rounded"
-        style={{ backgroundImage: `url(https://picsum.photos/168/32)` }}
+        className="hidden md:block m-4 h-32px w-[168px] bg-slate-100 rounded"
+        style={{ backgroundImage: `url(${logoUrl})` }}
+        onClick={() => {
+          setLogoUrl(randomImgUrl + "?t=" + Date.now());
+        }}
       />
       <Button
         type="text"

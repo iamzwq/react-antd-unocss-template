@@ -1,10 +1,9 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { Button, List, Skeleton, Space } from "antd";
 import { useRequest } from "ahooks";
 import hotNewsService from "./service";
 
-const NAVS = [
+const PLATFORMS = [
   { title: "知乎", id: "zhihu" },
   { title: "微博", id: "weibo" },
   { title: "微信", id: "weixin" },
@@ -15,10 +14,11 @@ const NAVS = [
 ];
 
 const HotNews = () => {
-  const [active, setActive] = useState(NAVS[0].id);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const platform = searchParams.get("platform") || PLATFORMS[0].id;
 
-  const { data, loading } = useRequest(() => hotNewsService.fetchHotNews(active), {
-    refreshDeps: [active],
+  const { data, loading } = useRequest(() => hotNewsService.fetchHotNews(platform), {
+    refreshDeps: [platform],
   });
 
   const hotNews = data?.data.list;
@@ -26,13 +26,15 @@ const HotNews = () => {
   return (
     <div className="h-full flex flex-col">
       <Space wrap>
-        {NAVS.map(nav => (
+        {PLATFORMS.map(item => (
           <Button
-            type={active === nav.id ? "primary" : "default"}
-            key={nav.id}
-            onClick={() => setActive(nav.id)}
+            type={platform === item.id ? "primary" : "default"}
+            key={item.id}
+            onClick={() => {
+              setSearchParams({ platform: item.id });
+            }}
           >
-            {nav.title}
+            {item.title}
           </Button>
         ))}
       </Space>
