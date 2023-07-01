@@ -1,14 +1,5 @@
 import { request } from "~/utils/request";
-
-export interface NewsItem {
-  id: number;
-  type: string;
-  title: string;
-  link: string;
-  other: string;
-  createAt: string;
-  updateAt: string;
-}
+import { NewsItem } from "./types";
 
 const hotNewsService = {
   fetchHotNews: (type: string) => {

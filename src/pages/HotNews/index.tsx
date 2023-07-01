@@ -1,7 +1,7 @@
 import { Link, useSearchParams } from "react-router-dom";
 import { Button, List, Skeleton, Space } from "antd";
 import { useRequest } from "ahooks";
-import hotNewsService from "./service";
+import { hotNewsService } from "~/api";
 
 const PLATFORMS = [
   { title: "知乎", id: "zhihu" },
