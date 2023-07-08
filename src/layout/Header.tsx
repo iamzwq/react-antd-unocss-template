@@ -104,7 +104,7 @@ const Header = () => {
           setCollapsed(!collapsed);
         }}
       />
-      <div className="text-2xl font-600 ml-4">🦁 Admin Templete</div>
+      <div className="text-3xl font-600 ml-4 gradient-text">Admin Templete la la la</div>
       <div className="ml-auto pr-4">
         <HeaderRight />
       </div>

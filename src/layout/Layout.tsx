@@ -6,7 +6,7 @@ import Slider from "./Sider";
 
 const { Content } = Layout;
 
-const BasicLayout = () => {
+const RootLayout = () => {
   const collapsed = useGlobalStore(state => state.collapsed);
 
   return (
@@ -26,4 +26,4 @@ const BasicLayout = () => {
   );
 };
 
-export default BasicLayout;
+export default RootLayout;

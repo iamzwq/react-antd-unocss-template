@@ -2,7 +2,7 @@ import { lazy } from "react";
 import { Navigate, NonIndexRouteObject, RouteObject, redirect } from "react-router-dom";
 import { useGlobalStore } from "~/stores";
 import lazyLoad from "./lazyLoad";
-import BasicLayout from "~/layout";
+import RootLayout from "~/layout/Layout";
 
 export interface CustomRouteObject extends NonIndexRouteObject {
   children?: CustomRouteObject[];
@@ -26,8 +26,14 @@ export const menuRoutes: CustomRouteObject[] = [
     element: lazyLoad(lazy(() => import("~/pages/Home"))),
   },
   {
+    path: "/about",
+    title: "About",
+    icon: <div className="i-ant-design-credit-card-outlined" />,
+    element: lazyLoad(lazy(() => import("~/pages/About"))),
+  },
+  {
     path: "/hotNews",
-    title: "聚合热榜",
+    title: "Hot News",
     icon: <div className="i-ant-design-bars-outlined" />,
     element: lazyLoad(lazy(() => import("~/pages/HotNews"))),
   },
@@ -52,7 +58,7 @@ export const routes: RouteObject[] = [
   },
   {
     path: "/",
-    element: <BasicLayout />,
+    element: <RootLayout />,
     loader: authCheck,
     children: [
       {
