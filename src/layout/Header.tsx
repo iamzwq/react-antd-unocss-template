@@ -60,7 +60,7 @@ const HeaderRight = () => {
         />
         <Input
           type="color"
-          className="absolute top-2/4 left-2/4 translate-y--1/2 translate-x--1/2 w-8 h-8 rounded-full opacity-0 cursor-pointer"
+          className="absolute inset-0 rounded-full opacity-0 cursor-pointer"
           defaultValue={colorPrimary}
           onChange={handleColorChange}
         />

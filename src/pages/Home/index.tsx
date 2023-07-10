@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { clsx } from "clsx";
 
 const Home = () => {
   return (
@@ -13,7 +14,10 @@ const Home = () => {
           <Link
             key={item.link}
             to={item.link}
-            className="p-6 rounded-lg shadow-[0_6px_18px_rgba(0,0,0,0.1)] min-w-[204px] cursor-pointer transition duration-300 hover:shadow-[0_8px_20px_rgba(0,0,0,0.18)] hover:translate-y--2px"
+            className={clsx(
+              "p-6 rounded-lg shadow-[0_6px_18px_rgba(0,0,0,0.1)] min-w-[204px] cursor-pointer transition duration-300",
+              "hover:shadow-[0_8px_20px_rgba(0,0,0,0.18)] hover:translate-y--2px"
+            )}
           >
             <div className="mb-2 text-xl">{item.emoji}</div>
             <div className="text-xl font-600">{item.name}</div>
