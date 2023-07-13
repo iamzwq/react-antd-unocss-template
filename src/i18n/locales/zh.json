@@ -7,5 +7,16 @@
     "system": "系统设置",
     "personal": "个人中心"
   },
-  "login": "登录"
+  "login": "登录",
+  "hotNews": {
+    "tab": {
+      "zhihu": "知乎",
+      "weibo": "微博",
+      "weixin": "微信",
+      "baidu": "百度",
+      "douyin": "抖音",
+      "bilibili": "B站",
+      "toutiao": "头条"
+    }
+  }
 }

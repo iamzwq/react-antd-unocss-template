@@ -1,21 +1,28 @@
+import { useMemo } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Button, List, Skeleton, Space } from "antd";
 import { useRequest } from "ahooks";
+import { useTranslation } from "react-i18next";
 import { hotNewsService } from "~/api";
 
-const PLATFORMS = [
-  { title: "知乎", id: "zhihu" },
-  { title: "微博", id: "weibo" },
-  { title: "微信", id: "weixin" },
-  { title: "百度", id: "baidu" },
-  { title: "抖音", id: "douyin" },
-  { title: "B站", id: "bilibili" },
-  { title: "头条", id: "toutiao" },
-];
-
 const HotNews = () => {
+  const { t } = useTranslation();
+
+  const platforms = useMemo(
+    () => [
+      { title: t("hotNews.tab.zhihu"), id: "zhihu" },
+      { title: t("hotNews.tab.weibo"), id: "weibo" },
+      { title: t("hotNews.tab.weixin"), id: "weixin" },
+      { title: t("hotNews.tab.baidu"), id: "baidu" },
+      { title: t("hotNews.tab.douyin"), id: "douyin" },
+      { title: t("hotNews.tab.bilibili"), id: "bilibili" },
+      { title: t("hotNews.tab.toutiao"), id: "toutiao" },
+    ],
+    [t]
+  );
+
   const [searchParams, setSearchParams] = useSearchParams();
-  const platform = searchParams.get("platform") || PLATFORMS[0].id;
+  const platform = searchParams.get("platform") || platforms[0].id;
 
   const { data, loading } = useRequest(() => hotNewsService.fetchHotNews(platform), {
     refreshDeps: [platform],
@@ -26,7 +33,7 @@ const HotNews = () => {
   return (
     <div className="h-full flex flex-col">
       <Space wrap>
-        {PLATFORMS.map(item => (
+        {platforms.map(item => (
           <Button
             type={platform === item.id ? "primary" : "default"}
             key={item.id}

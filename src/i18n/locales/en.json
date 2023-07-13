@@ -7,5 +7,16 @@
     "system": "System",
     "personal": "Personal Center"
   },
-  "login": "Login"
+  "login": "Login",
+  "hotNews": {
+    "tab": {
+      "zhihu": "zhihu",
+      "weibo": "weibo",
+      "weixin": "weixin",
+      "baidu": "baidu",
+      "douyin": "douyin",
+      "bilibili": "bilibili",
+      "toutiao": "toutiao"
+    }
+  }
 }
