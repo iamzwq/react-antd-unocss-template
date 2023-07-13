@@ -42,6 +42,7 @@ export default defineConfig({
   shortcuts: {
     "flex-center": "flex items-center justify-center",
     "wh-full": "w-full h-full",
-    "gradient-text": "bg-clip-text text-transparent animation-hue bg-gradient-to-r from-pink-500 to-purple-500",
+    "gradient-text":
+      "bg-clip-text text-transparent animation-hue bg-gradient-to-r from-pink-500 to-purple-500",
   },
 });

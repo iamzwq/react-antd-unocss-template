@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { Avatar, Badge, Button, Dropdown, Input, MenuProps, Space } from "antd";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDebounceFn } from "ahooks";
+import { useTranslation } from "react-i18next";
 import { useGlobalStore } from "~/stores";
-import { useState } from "react";
 
 const randomImgUrl = "https://picsum.photos/168/32";
 
@@ -13,6 +14,8 @@ const HeaderRight = () => {
   const setToken = useGlobalStore(state => state.setToken);
   const setColorPrimary = useGlobalStore(state => state.setColorPrimary);
   const colorPrimary = useGlobalStore(state => state.colorPrimary);
+  const lang = useGlobalStore(state => state.lang);
+  const setLang = useGlobalStore(state => state.setLang);
 
   const { run: handleColorChange } = useDebounceFn(
     e => {
@@ -45,6 +48,15 @@ const HeaderRight = () => {
 
   return (
     <Space size={16}>
+      <Button
+        type="text"
+        shape="circle"
+        onClick={() => {
+          setLang(lang === "zh" ? "en" : "zh");
+        }}
+      >
+        {lang === "zh" ? "中文" : "Eng"}
+      </Button>
       <Badge count={12}>
         <Button
           type="text"
@@ -76,6 +88,8 @@ const HeaderRight = () => {
 };
 
 const Header = () => {
+  const { t } = useTranslation();
+
   const collapsed = useGlobalStore(state => state.collapsed);
   const setCollapsed = useGlobalStore(state => state.setCollapsed);
 
@@ -104,7 +118,7 @@ const Header = () => {
           setCollapsed(!collapsed);
         }}
       />
-      <div className="text-3xl font-600 ml-4 gradient-text">Admin Templete la la la</div>
+      <div className="text-3xl font-600 ml-4 gradient-text">{t("projectName")}</div>
       <div className="ml-auto pr-4">
         <HeaderRight />
       </div>

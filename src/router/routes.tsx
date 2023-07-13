@@ -21,30 +21,30 @@ const authCheck = () => {
 export const menuRoutes: CustomRouteObject[] = [
   {
     path: "/home",
-    title: "首页",
+    title: "mainMenu.home",
     icon: <div className="i-ant-design-home-outlined" />,
     element: lazyLoad(lazy(() => import("~/pages/Home"))),
   },
   {
     path: "/about",
-    title: "About",
+    title: "mainMenu.about",
     icon: <div className="i-ant-design-credit-card-outlined" />,
     element: lazyLoad(lazy(() => import("~/pages/About"))),
   },
   {
     path: "/hotNews",
-    title: "Hot News",
+    title: "mainMenu.hotNews",
     icon: <div className="i-ant-design-bars-outlined" />,
     element: lazyLoad(lazy(() => import("~/pages/HotNews"))),
   },
   {
     path: "/system",
-    title: "系统管理",
+    title: "mainMenu.system",
     icon: <div className="i-ant-design-setting-outlined" />,
     children: [
       {
         path: "/system/user",
-        title: "用户管理",
+        title: "mainMenu.personal",
         element: lazyLoad(lazy(() => import("~/pages/User"))),
       },
     ],

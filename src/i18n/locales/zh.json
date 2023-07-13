@@ -1,0 +1,11 @@
+{
+  "projectName": "管理后台模板",
+  "mainMenu": {
+    "home": "首页",
+    "about": "关于",
+    "hotNews": "热点新闻",
+    "system": "系统设置",
+    "personal": "个人中心"
+  },
+  "login": "登录"
+}

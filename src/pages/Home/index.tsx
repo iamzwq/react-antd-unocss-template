@@ -1,15 +1,18 @@
 import { Link } from "react-router-dom";
 import { clsx } from "clsx";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
+  const { t } = useTranslation();
+
   return (
     <div>
       <div className="flex flex-wrap gap-8">
         {[
-          { name: "Login", emoji: "🔑", link: "/login" },
-          { name: "About", emoji: "🤭", link: "/about" },
-          { name: "Hot News", emoji: "🌳", link: "/hotNews" },
-          { name: "User Settings", emoji: "🍄", link: "/system/user" },
+          { name: t("login"), emoji: "🔑", link: "/login" },
+          { name: t("mainMenu.about"), emoji: "🤭", link: "/about" },
+          { name: t("mainMenu.hotNews"), emoji: "🌳", link: "/hotNews" },
+          { name: t("mainMenu.personal"), emoji: "🍄", link: "/system/user" },
         ].map(item => (
           <Link
             key={item.link}
