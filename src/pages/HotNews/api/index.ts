@@ -1,7 +1,7 @@
 import { request } from "~/utils/request";
 import { NewsItem } from "./types";
 
-const hotNewsService = {
+const hotNewsApi = {
   fetchHotNews: (type: string) => {
     return request.get<{ list: NewsItem[] }>(`/new?type=${type}`, {
       successCode: 200
@@ -9,4 +9,4 @@ const hotNewsService = {
   }
 };
 
-export default hotNewsService;
+export default hotNewsApi;

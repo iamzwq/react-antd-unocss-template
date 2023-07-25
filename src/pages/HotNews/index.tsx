@@ -3,7 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { Button, List, Skeleton, Space } from "antd";
 import { useRequest } from "ahooks";
 import { useTranslation } from "react-i18next";
-import { hotNewsService } from "~/api";
+import hotNewsApi from "./api";
 
 const HotNews = () => {
   const { t } = useTranslation();
@@ -24,7 +24,7 @@ const HotNews = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const platform = searchParams.get("platform") || platforms[0].id;
 
-  const { data, loading } = useRequest(() => hotNewsService.fetchHotNews(platform), {
+  const { data, loading } = useRequest(() => hotNewsApi.fetchHotNews(platform), {
     refreshDeps: [platform]
   });
 
