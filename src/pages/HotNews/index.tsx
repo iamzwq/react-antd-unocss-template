@@ -16,7 +16,7 @@ const HotNews = () => {
       { title: t("hotNews.tab.baidu"), id: "baidu" },
       { title: t("hotNews.tab.douyin"), id: "douyin" },
       { title: t("hotNews.tab.bilibili"), id: "bilibili" },
-      { title: t("hotNews.tab.toutiao"), id: "toutiao" },
+      { title: t("hotNews.tab.toutiao"), id: "toutiao" }
     ],
     [t]
   );
@@ -25,7 +25,7 @@ const HotNews = () => {
   const platform = searchParams.get("platform") || platforms[0].id;
 
   const { data, loading } = useRequest(() => hotNewsService.fetchHotNews(platform), {
-    refreshDeps: [platform],
+    refreshDeps: [platform]
   });
 
   const hotNews = data?.data.list;

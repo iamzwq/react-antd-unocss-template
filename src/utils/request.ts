@@ -4,7 +4,7 @@ import type {
   AxiosRequestConfig,
   AxiosResponse,
   CreateAxiosDefaults,
-  InternalAxiosRequestConfig,
+  InternalAxiosRequestConfig
 } from "axios";
 import { router } from "~/router";
 import { useGlobalStore } from "~/stores";
@@ -107,5 +107,5 @@ class Request {
 
 export const request = new Request({
   timeout: 5 * 60 * 1000,
-  baseURL: import.meta.env.VITE_API_BASEURL,
+  baseURL: import.meta.env.VITE_API_BASEURL
 });

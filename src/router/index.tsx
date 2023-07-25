@@ -6,7 +6,7 @@ import { routes } from "./routes";
 
 // eslint-disable-next-line
 export const router = createBrowserRouter(routes, {
-  basename: "/",
+  basename: "/"
 });
 
 const Router = () => {

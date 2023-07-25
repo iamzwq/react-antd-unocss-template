@@ -38,12 +38,12 @@ const HeaderRight = () => {
         >
           退出登录
         </Link>
-      ),
+      )
     },
     {
       key: "/system/user",
-      label: <Link to="/system/user">用户设置</Link>,
-    },
+      label: <Link to="/system/user">用户设置</Link>
+    }
   ];
 
   return (

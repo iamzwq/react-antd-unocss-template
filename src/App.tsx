@@ -25,8 +25,8 @@ const App = () => {
       locale={locale}
       theme={{
         token: {
-          colorPrimary: colorPrimary,
-        },
+          colorPrimary: colorPrimary
+        }
       }}
     >
       <AntdApp>

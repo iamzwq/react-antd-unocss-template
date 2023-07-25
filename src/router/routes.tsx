@@ -23,19 +23,19 @@ export const menuRoutes: CustomRouteObject[] = [
     path: "/home",
     title: "mainMenu.home",
     icon: <div className="i-ant-design-home-outlined" />,
-    element: lazyLoad(lazy(() => import("~/pages/Home"))),
+    element: lazyLoad(lazy(() => import("~/pages/Home")))
   },
   {
     path: "/about",
     title: "mainMenu.about",
     icon: <div className="i-ant-design-credit-card-outlined" />,
-    element: lazyLoad(lazy(() => import("~/pages/About"))),
+    element: lazyLoad(lazy(() => import("~/pages/About")))
   },
   {
     path: "/hotNews",
     title: "mainMenu.hotNews",
     icon: <div className="i-ant-design-bars-outlined" />,
-    element: lazyLoad(lazy(() => import("~/pages/HotNews"))),
+    element: lazyLoad(lazy(() => import("~/pages/HotNews")))
   },
   {
     path: "/system",
@@ -45,16 +45,16 @@ export const menuRoutes: CustomRouteObject[] = [
       {
         path: "/system/user",
         title: "mainMenu.personal",
-        element: lazyLoad(lazy(() => import("~/pages/User"))),
-      },
-    ],
-  },
+        element: lazyLoad(lazy(() => import("~/pages/User")))
+      }
+    ]
+  }
 ];
 
 export const routes: RouteObject[] = [
   {
     path: "/login",
-    element: lazyLoad(lazy(() => import("~/pages/Login"))),
+    element: lazyLoad(lazy(() => import("~/pages/Login")))
   },
   {
     path: "/",
@@ -63,9 +63,9 @@ export const routes: RouteObject[] = [
     children: [
       {
         index: true,
-        element: <Navigate to="/home" replace />,
+        element: <Navigate to="/home" replace />
       },
-      ...menuRoutes,
-    ],
-  },
+      ...menuRoutes
+    ]
+  }
 ];

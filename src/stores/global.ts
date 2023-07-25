@@ -22,10 +22,10 @@ const useGlobalStore = create<GlobalState>()(
       colorPrimary: "#1677ff",
       setColorPrimary: colorPrimary => set({ colorPrimary }),
       token: "",
-      setToken: token => set({ token }),
+      setToken: token => set({ token })
     }),
     {
-      name: "globalStore",
+      name: "globalStore"
     }
   )
 );

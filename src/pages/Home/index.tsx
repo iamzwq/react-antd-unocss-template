@@ -12,7 +12,7 @@ const Home = () => {
           { name: t("login"), emoji: "🔑", link: "/login" },
           { name: t("mainMenu.about"), emoji: "🤭", link: "/about" },
           { name: t("mainMenu.hotNews"), emoji: "🌳", link: "/hotNews" },
-          { name: t("mainMenu.personal"), emoji: "🍄", link: "/system/user" },
+          { name: t("mainMenu.personal"), emoji: "🍄", link: "/system/user" }
         ].map(item => (
           <Link
             key={item.link}
@@ -34,22 +34,22 @@ const Home = () => {
               "https://uploads-ssl.webflow.com/5ba4b3c973b5d218459f7e6f/617a3fa0a28ef932c19ca0e2_nibras.jpeg",
             name: "Nibras Ibnomer",
             description:
-              "Nibras is a Product Designer at Cleo and previously at Stint. She's working and living remotely between the UK, Portugal and Sri Lanka.",
+              "Nibras is a Product Designer at Cleo and previously at Stint. She's working and living remotely between the UK, Portugal and Sri Lanka."
           },
           {
             avatar:
               "https://uploads-ssl.webflow.com/5ba4b3c973b5d218459f7e6f/60c864ba15cbcc14a38ef0c4_Group%20175.png",
             name: "Uche Onyeka",
             description:
-              "Uche is a Nigerian designer, content creator and community advocate. He is currently a Product Design Intern at Facebook in London.",
+              "Uche is a Nigerian designer, content creator and community advocate. He is currently a Product Design Intern at Facebook in London."
           },
           {
             avatar:
               "https://uploads-ssl.webflow.com/5ba4b3c973b5d218459f7e6f/609bb07d510c9340d6d6f351_Group%20175%20(3).png",
             name: "Andy Chung",
             description:
-              "Andy is a Product Designer based in Vancouver. He’s currently building Read.cv with his friends Joey and Mehdi.",
-          },
+              "Andy is a Product Designer based in Vancouver. He’s currently building Read.cv with his friends Joey and Mehdi."
+          }
         ].map(item => (
           <div
             key={item.name}

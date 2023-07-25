@@ -31,7 +31,7 @@ const Sider = () => {
             key: menu.path!,
             label: t(menu.title!),
             icon: menu.icon,
-            children: menu.children ? generateMenuItems(menu.children) : null,
+            children: menu.children ? generateMenuItems(menu.children) : null
           };
         });
     },

@@ -8,12 +8,12 @@ i18next.use(initReactI18next).init({
   lng: "zh",
   resources: {
     zh: {
-      translation: zh,
+      translation: zh
     },
     en: {
-      translation: en,
-    },
-  },
+      translation: en
+    }
+  }
 });
 
 export { i18next };
