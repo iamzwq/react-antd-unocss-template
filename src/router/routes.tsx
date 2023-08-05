@@ -48,6 +48,18 @@ export const menuRoutes: CustomRouteObject[] = [
         element: lazyLoad(lazy(() => import("~/pages/User")))
       }
     ]
+  },
+  {
+    path: "/demo",
+    title: "mainMenu.demo",
+    icon: <div className="i-ant-design-video-camera-outlined" />,
+    children: [
+      {
+        path: "/demo/scroll-snap",
+        title: "sroll-snap",
+        element: lazyLoad(lazy(() => import("~/pages/Demo/ScrollSnap")))
+      }
+    ]
   }
 ];
 

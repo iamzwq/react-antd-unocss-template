@@ -4,9 +4,24 @@ export default defineConfig({
   presets: [
     presetUno(),
     presetIcons({
-      warn: true, // 当没有匹配到图标时发出警告
-    }),
+      // scale: 1.2, // 默认图标大小
+      warn: true // 当没有匹配到图标时发出警告
+    })
   ],
+  rules: [
+    [
+      "animation-hue",
+      {
+        animation: "hue 3s linear infinite"
+      }
+    ]
+  ],
+  shortcuts: {
+    "flex-center": "flex items-center justify-center",
+    "wh-full": "w-full h-full",
+    "gradient-text":
+      "bg-clip-text text-transparent animation-hue bg-gradient-to-r from-pink-500 to-purple-500"
+  }
   // theme: {
   //   animation: {
   //     keyframes: {
@@ -30,18 +45,4 @@ export default defineConfig({
   //     },
   //   },
   // },
-  rules: [
-    [
-      "animation-hue",
-      {
-        animation: "hue 5s linear infinite",
-      },
-    ],
-  ],
-  shortcuts: {
-    "flex-center": "flex items-center justify-center",
-    "wh-full": "w-full h-full",
-    "gradient-text":
-      "bg-clip-text text-transparent animation-hue bg-gradient-to-r from-pink-500 to-purple-500",
-  },
 });

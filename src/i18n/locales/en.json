@@ -5,7 +5,8 @@
     "about": "About",
     "hotNews": "Hot News",
     "system": "System",
-    "personal": "Personal Center"
+    "personal": "Personal Center",
+    "demo": "demo"
   },
   "login": "Login",
   "hotNews": {
